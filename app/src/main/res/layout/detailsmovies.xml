@@ -99,7 +99,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
-                    android:text="Play Trailer" />
+                    android:background="@android:color/background_dark"
+                    android:text="Play Trailer"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="25dp" />
 
             </LinearLayout>
 

@@ -2,15 +2,22 @@ package com.example.sonel.moviesproject;
 
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
+import com.loopj.android.http.JsonHttpResponseHandler;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
 import butterknife.ButterKnife;
+import cz.msebera.android.httpclient.Header;
 
 /**
  * Created by sonel on 7/21/2017.
@@ -23,7 +30,7 @@ public class YouTubeActivity extends YouTubeBaseActivity {
     private Movie movie;
     private String url;
 
-
+private String trailer="/videos?api_key=";
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,20 +42,20 @@ public class YouTubeActivity extends YouTubeBaseActivity {
 
         //retrieve ID of movie
         int movieID = movie.getID();
- url=Utils.getBaseURLtrailer()+ Integer.toString(movieID);
+      url=Utils.getBaseURLtrailer()+ Integer.toString(movieID);
         trailers = new ArrayList<>();
 
-       // String url = Utils.getBaseURL() + Integer.toString(movieID) + "/videos?api_key=" + Utils.getMovieDBAPIkey();
+        String url = Utils.getBaseURL() + Integer.toString(movieID) + trailer + Utils.getMovieDBAPIkey();
 
-        String url=Utils.getBaseURLtrailer()+ Integer.toString(movieID);
+       // String url=Utils.getBaseURLtrailer()+ Integer.toString(movieID)+ trailer+ u;
 
-        //fetchMovieVideos(url);
-        setUpLayout();
+        fetchMovieVideos(url);
+       // setUpLayout();
 
     }
 
 
-   /* private void fetchMovieVideos(String url) {
+    private void fetchMovieVideos(String url) {
         //make sure there's access to the web
         boolean connectivity = Utils.checkForConnectivity(this);
 
@@ -75,7 +82,7 @@ public class YouTubeActivity extends YouTubeBaseActivity {
                 }
             });
         }
-    }*/
+    }
 
     private void setUpLayout() {
 
@@ -89,7 +96,6 @@ public class YouTubeActivity extends YouTubeBaseActivity {
         //trailers contains now all the trailers.
         //Let's randomly select the first one that is type 'Trailer'
         String selected = null;
-
         Trailer trailer;
         for (int i = 0; i < trailers.size() && selected == null; i++) {
             trailer = trailers.get(i);
@@ -104,8 +110,7 @@ public class YouTubeActivity extends YouTubeBaseActivity {
             YouTubePlayerView youTubePlayerView =
                     (YouTubePlayerView) findViewById(R.id.youtube_player);
 
-           // youTubePlayerView.initialize(Utils.getYouTubeAPIkey(),
-                    youTubePlayerView.initialize(url,
+            youTubePlayerView.initialize(Utils.getYouTubeAPIkey(),
                     new YouTubePlayer.OnInitializedListener() {
                         @Override
                         public void onInitializationSuccess(YouTubePlayer.Provider provider,
@@ -125,5 +130,7 @@ public class YouTubeActivity extends YouTubeBaseActivity {
         }
 
     }
+
+
 
 }

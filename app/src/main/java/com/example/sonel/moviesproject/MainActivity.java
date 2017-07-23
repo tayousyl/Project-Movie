@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if (movie.getRating() > 5.0) {
                     //launch video activity
-                    //intent = new Intent(MainActivity.this, YouTubeActivity.class);
+                   // intent = new Intent(MainActivity.this, YouTubeActivity.class);
                     intent = new Intent(MainActivity.this, DetailsMovies.class);
                 } else {
                     intent = new Intent(MainActivity.this, DetailsMovies.class);

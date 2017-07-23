@@ -8,19 +8,12 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.loopj.android.http.JsonHttpResponseHandler;
 import com.squareup.picasso.Picasso;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 
 import butterknife.ButterKnife;
-import cz.msebera.android.httpclient.Header;
 import jp.wasabeef.picasso.transformations.RoundedCornersTransformation;
 
 import static com.example.sonel.moviesproject.R.id.ivMovieImage;
@@ -93,6 +86,7 @@ public class DetailsMovies extends AppCompatActivity {
                 .into(ivImage);
 
         bt = (Button) findViewById(R.id.videoplayer);
+       // bt.setBackgroundColor(Color.BLUE);
         bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -105,11 +99,11 @@ public class DetailsMovies extends AppCompatActivity {
 
             }
         });
-        fetchMovieVideos(url);
+        //fetchMovieVideos(url);
 
             }
 
-    private void fetchMovieVideos(String url) {
+  /*  private void fetchMovieVideos(String url) {
         //make sure there's access to the web
         boolean connectivity = Utils.checkForConnectivity(this);
 
@@ -135,8 +129,8 @@ public class DetailsMovies extends AppCompatActivity {
                     super.onFailure(statusCode, headers, responseString, throwable);
                 }
             });
-        }
-    }
+        }*/
+
 
 
 

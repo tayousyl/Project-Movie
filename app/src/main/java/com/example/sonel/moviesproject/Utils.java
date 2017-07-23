@@ -14,7 +14,7 @@ public class Utils {
 
 
     private final static String movieDBAPIkey = "a07e22bc18f5cb106bfe4cc1f83ad8ed";
-    private final static String youTubeAPIkey = "AIzaSyAT3LmVNkOC6Cnf_z7ch6GR3ZEeiPDN_Iw";
+    private final static String youTubeAPIkey = "a07e22bc18f5cb106bfe4cc1f83ad8ed";
 
     private final static String baseURLmovie = " https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed";
 
