@@ -33,7 +33,10 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    tools:text="Title" />
+                    tools:text="Title"
+                    android:textStyle="bold"
+
+                    />
 
                 <TextView
                     android:id="@+id/release_date"
@@ -84,7 +87,13 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:layout_weight="1"
-                    tools:text="synopsis" />
+                    tools:text="synopsis"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="italic"
+                    android:textSize="14sp"
+                    android:textAlignment="center"
+
+                    />
             </LinearLayout>
 
 
@@ -97,12 +106,12 @@
                 <Button
                     android:id="@+id/videoplayer"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_marginTop="30dp"
-                    android:background="@android:color/background_dark"
+                    android:background="@color/colorAccent"
                     android:text="Play Trailer"
                     android:textColor="@android:color/background_light"
-                    android:textSize="25dp" />
+                    android:textSize="22sp" />
 
             </LinearLayout>
 

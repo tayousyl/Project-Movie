@@ -28,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
     private ListView lvMovies;
     private SwipeRefreshLayout swipeContainer;
 
+    private Movie movie;
+
 
 
    // private final String URL = Utils.getBaseURL()+"now_playing?api_key="+Utils.getMovieDBAPIkey();
@@ -85,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
 
                 Intent intent = null;
 
-                if (movie.getRating() > 5.0) {
+                if (movie.getRating() > 3.0) {
                     //launch video activity
                    // intent = new Intent(MainActivity.this, YouTubeActivity.class);
                     intent = new Intent(MainActivity.this, DetailsMovies.class);

@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    >
 
     <ImageView
         android:id="@+id/txtimage"
@@ -17,12 +18,14 @@
         android:id="@+id/txttitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_toRightOf="@+id/txtimage"
         android:layout_alignParentTop="true"
         android:layout_toEndOf="@+id/txtimage"
-        tools:text="The Girl on the Train" />
+        android:layout_toRightOf="@+id/txtimage"
+        android:padding="10dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="24sp"
+        tools:text="The Girl on the Train"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/txtoverview"
@@ -32,5 +35,9 @@
         android:padding="10dp"
         android:layout_toRightOf="@+id/txtimage"
         android:layout_toEndOf="@+id/txtimage"
-        tools:text="Rachel Watson, an alcoholic who divorced her husband Tom after she caught him cheating on her, takes the train to work daily. She fantasizes about the relationship of her neighbours, Scott and Megan Hipwell, during her commute. That all changes when she witnesses something from the train window and Megan is missing, presumed dead." />
+        tools:text="Rachel Watson, an alcoholic who divorced her husband Tom after she caught him cheating on her, takes the train to work daily. She fantasizes about the relationship of her neighbours, Scott and Megan Hipwell, during her commute. That all changes when she witnesses something from the train window and Megan is missing, presumed dead."
+        android:textColor="@android:color/background_light"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        />
 </RelativeLayout>

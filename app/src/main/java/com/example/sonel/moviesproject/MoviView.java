@@ -82,8 +82,8 @@ public class MoviView extends RelativeLayout {
         // Two possible views depending on popularity:
         // - image(poster/backdrop depending on orientation) + title + overview --> item_movie.xml
         // - full backdrop (for both orientations) --> item_popular_movie.xml
-        if (movie.getRating() <= 5.0) {
-            LayoutInflater.from(getContext()).inflate(item_movie, this, true);
+        if (movie.getRating() <= 3.0) {
+            LayoutInflater.from(getContext()).inflate(R.layout.item_movie, this, true);
             setupChildren();
 
             //determine which image to load depending on screen orientation:
